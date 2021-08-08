@@ -1,31 +1,40 @@
 import cv2
+from face_rec import classify_face
 
-cam = cv2.VideoCapture(0)
 
-cv2.namedWindow("test")
+def capture():
+    print("Here")
+    cam = cv2.VideoCapture(0)
 
-img_counter = 0
+    cv2.namedWindow("test")
 
-while True:
-    ret, frame = cam.read()
-    if not ret:
-        print("failed to grab frame")
-        break
-    cv2.imshow("test", frame)
+    img_counter = 0
 
-    k = cv2.waitKey(1)
-    if k % 256 == 27:
-        # ESC pressed
-        print("Escape hit, closing...")
-        break
+    while True:
+        print("--Here")
+        ret, frame = cam.read()
+        if not ret:
+            print("failed to grab frame")
+            break
+        cv2.imshow("test", frame)
 
-    elif k % 256 == 32:
-        # SPACE pressed
-        img_name = "test.jpg"
-        cv2.imwrite(img_name, frame)
-        print("{} written!".format(img_name))
-        img_counter += 1
+        k = cv2.waitKey(1)
+        if k % 256 == 27:
+            # ESC pressed
+            print("Escape hit, closing...")
+            break
 
-cam.release()
+        elif k % 256 == 32:
+            # SPACE pressed
+            print("Space pressed")
+            img_name = "test.jpg"
+            cv2.imwrite(img_name, frame)
+            print("{} written!".format(img_name))
+            img_counter += 1
+            print(classify_face('test.jpg'))
 
-cv2.destroyAllWindows()
+    cam.release()
+    cv2.destroyAllWindows()
+
+
+capture()

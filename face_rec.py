@@ -85,4 +85,4 @@ def classify_face(im):
             return face_names
 
 
-print(classify_face("test.jpg"))
+# print(classify_face("test.jpg"))
