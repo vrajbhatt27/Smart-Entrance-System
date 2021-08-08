@@ -3,7 +3,6 @@ from face_rec import classify_face
 
 
 def capture():
-    print("Here")
     cam = cv2.VideoCapture(0)
 
     cv2.namedWindow("test")
@@ -11,7 +10,6 @@ def capture():
     img_counter = 0
 
     while True:
-        print("--Here")
         ret, frame = cam.read()
         if not ret:
             print("failed to grab frame")
