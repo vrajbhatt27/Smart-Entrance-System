@@ -54,7 +54,7 @@ def classify_face(im):
     face_locations = face_recognition.face_locations(img)
     unknown_face_encodings = face_recognition.face_encodings(img, face_locations)
 
-    face_names = []
+    face_name = ""
     for face_encoding in unknown_face_encodings:
         # See if the face is a match for the known face(s)
         matches = face_recognition.compare_faces(faces_encoded, face_encoding)
@@ -66,7 +66,7 @@ def classify_face(im):
         if matches[best_match_index]:
             name = known_face_names[best_match_index]
 
-        face_names.append(name)
+        face_name = name
 
         # for (top, right, bottom, left), name in zip(face_locations, face_names):
         #     # Draw a box around the face
@@ -77,10 +77,10 @@ def classify_face(im):
         #     font = cv2.FONT_HERSHEY_DUPLEX
         #     cv2.putText(img, name, (left - 20, bottom + 15), font, 1.0, (255, 255, 255), 2)
 
-    if face_names[0] == "Unknown":
+    if face_name == "":
         print("!!! The face didn't match. You are not allowed !!!")
     else:
-        print("The Person name is: {}".format(face_names[0]))
+        print("The Person name is: {}".format(face_name))
     # Display the resulting image
     # while True:
     #     if face_names[0] == "Unknown":
