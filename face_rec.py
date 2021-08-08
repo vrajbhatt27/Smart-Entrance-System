@@ -3,7 +3,6 @@ import os
 import cv2
 import face_recognition
 import numpy as np
-from time import sleep
 
 
 def get_encoded_faces():
@@ -68,32 +67,9 @@ def classify_face(im):
 
         face_name = name
 
-        # for (top, right, bottom, left), name in zip(face_locations, face_names):
-        #     # Draw a box around the face
-        #     cv2.rectangle(img, (left - 20, top - 20), (right + 20, bottom + 20), (255, 0, 0), 2)
-        #
-        #     # Draw a label with a name below the face
-        #     cv2.rectangle(img, (left - 20, bottom - 15), (right + 20, bottom + 20), (255, 0, 0), cv2.FILLED)
-        #     font = cv2.FONT_HERSHEY_DUPLEX
-        #     cv2.putText(img, name, (left - 20, bottom + 15), font, 1.0, (255, 255, 255), 2)
-
     if face_name == "":
         print("!!! The face didn't match. You are not allowed !!!")
     else:
         print("The Person name is: {}".format(face_name))
-    # Display the resulting image
-    # while True:
-    #     if face_names[0] == "Unknown":
-    #         print("!!! The face didn't match. You are not allowed !!!")
-    #     else:
-    #         print("The Person name is: {}".format(face_names[0]))
-    #
-    #     print("\nPress q to continue")
-    #     x = input()
-    #     if x == "q":
-    #         return
-    #     else:
-    #         return
-
 
 # print(classify_face("test.jpg"))

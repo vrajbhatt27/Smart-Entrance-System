@@ -7,8 +7,6 @@ def capture():
 
     cv2.namedWindow("test")
 
-    img_counter = 0
-
     while True:
         ret, frame = cam.read()
         if not ret:
@@ -24,11 +22,9 @@ def capture():
 
         elif k % 256 == 32:
             # SPACE pressed
-            print("Space pressed")
             img_name = "test.jpg"
             cv2.imwrite(img_name, frame)
             print("{} written!".format(img_name))
-            img_counter += 1
             classify_face('test.jpg')
 
     cam.release()
