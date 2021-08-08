@@ -15,9 +15,9 @@ def get_encoded_faces():
     """
     encoded = {}
 
-    for dirpath, dnames, fnames in os.walk("../faces"):
+    for dirpath, dnames, fnames in os.walk("faces"):
         for f in fnames:
-            if f.endswith(".jpg") or f.endswith(".png"):
+            if f.endswith(".jpg") or f.endswith(".png") or f.endswith(".jpeg"):
                 face = fr.load_image_file("faces/" + f)
                 encoding = fr.face_encodings(face)[0]
                 encoded[f.split(".")[0]] = encoding
@@ -85,4 +85,4 @@ def classify_face(im):
             return face_names
 
 
-print(classify_face("1.png"))
+print(classify_face("test.jpg"))
