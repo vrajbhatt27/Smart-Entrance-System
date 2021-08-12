@@ -69,3 +69,4 @@ try:
     capture()
 except:
     print("Error in capturing...")
+    print()
