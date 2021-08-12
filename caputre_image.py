@@ -2,8 +2,10 @@ import time
 import cv2
 from pyzbar.pyzbar import decode
 import pyttsx3
+import servo
 
 engine = pyttsx3.init()
+engine.setProperty("rate", 115)
 
 
 def scan(frame):
@@ -14,14 +16,20 @@ def scan(frame):
 
     if data != "":
         if data == "Vraj Bhatt 18IT013":
-            engine.say("You are allowed")
+            engine.say("You are allowed. The door will open.")
             engine.runAndWait()
+            servo.unlock()
+            time.sleep(0.5)
+            engine.say("The Door will now close")
+            engine.runAndWait()
+            servo.lock()
         else:
             print(data)
             engine.say("Not Allowed")
             engine.runAndWait()
 
         time.sleep(0.5)
+        print("Scan Complete...")
 
 
 def capture():
