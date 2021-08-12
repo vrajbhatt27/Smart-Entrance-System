@@ -13,8 +13,13 @@ def scan(frame):
         data = obj.data.decode()
 
     if data != "":
-        engine.say("You are allowed")
-        engine.runAndWait()
+        if data == "Vraj Bhatt 18IT013":
+            engine.say("You are allowed")
+            engine.runAndWait()
+        else:
+            print(data)
+            engine.say("Not Allowed")
+            engine.runAndWait()
 
         time.sleep(0.5)
 
