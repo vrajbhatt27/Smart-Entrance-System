@@ -1,7 +1,11 @@
-import pyttsx3
+import json
 
-engine = pyttsx3.init()
-engine.setProperty("rate", 115)
-engine.say('Hello sir, how are you')
-engine.runAndWait()
+data = {}
+with open('data.json') as f:
+    data = json.load(f)
+
+lst = list(data.keys())
+if "18it113" in lst:
+    print("Ok")
+
 

@@ -1,3 +1,4 @@
+import json
 import time
 import cv2
 from pyzbar.pyzbar import decode
@@ -7,6 +8,12 @@ import servo
 engine = pyttsx3.init()
 engine.setProperty("rate", 115)
 
+jsonData = {}
+with open('data.json') as f:
+    jsonData = json.load(f)
+
+jsonData = list(jsonData.keys())
+
 
 def scan(frame):
     decoded = decode(frame)
@@ -15,7 +22,7 @@ def scan(frame):
         data = obj.data.decode()
 
     if data != "":
-        if data == "Vraj Bhatt 18IT013":
+        if data in jsonData:
             engine.say("You are allowed. The door will open.")
             engine.runAndWait()
             servo.unlock()
@@ -43,7 +50,10 @@ def capture():
             break
         cv2.imshow("test", frame)
 
-        scan(frame)
+        try:
+            scan(frame)
+        except:
+            print("Error in Scanning...")
 
         k = cv2.waitKey(1)
         if k % 256 == 27:
@@ -55,4 +65,7 @@ def capture():
     cv2.destroyAllWindows()
 
 
-capture()
+try:
+    capture()
+except:
+    print("Error in capturing...")
