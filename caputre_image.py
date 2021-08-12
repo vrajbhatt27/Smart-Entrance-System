@@ -1,32 +1,36 @@
+import time
 import cv2
 from pyzbar.pyzbar import decode
+import pyttsx3
+
+engine = pyttsx3.init()
+
+
+def scan(frame):
+    decoded = decode(frame)
+    data = ""
+    for obj in decoded:
+        data = obj.data.decode()
+
+    if data != "":
+        engine.say("You are allowed")
+        engine.runAndWait()
+
+        time.sleep(0.5)
 
 
 def capture():
     cam = cv2.VideoCapture(0)
-
     cv2.namedWindow("test")
 
     while True:
-        qrcode = False
-        qrdata = ""
         ret, frame = cam.read()
         if not ret:
             print("failed to grab frame")
             break
         cv2.imshow("test", frame)
 
-        try:
-            decodedobj = decode(frame)
-            for obj in decodedobj:
-                qrcode = True
-                qrdata = obj.data.decode()
-
-            if qrcode:
-                print("Person Allowed")
-                qrcode = False
-        except:
-            pass
+        scan(frame)
 
         k = cv2.waitKey(1)
         if k % 256 == 27:
