@@ -1,7 +1,14 @@
 {
-  "18it013": "Vraj Bhatt",
-  "18it034": "Dhruval Gandhi",
-  "18it005": "Devansh Akruvala",
-  "18it038": "Dishank Jani",
-  "18it066": "Shail Chudgar"
+  "abc123@gmail.com2021-09-1219:55qibetu@tempmailin.com": {
+    "name": "vraj",
+    "email": "qibetu@tempmailin.com",
+    "phone": 123,
+    "age": 123
+  },
+  "abc123@gmail.com2021-09-1219:55cibac67129@shensufu.com": {
+    "name": "abc",
+    "email": "cibac67129@shensufu.com",
+    "phone": 555,
+    "age": 555
+  }
 }
