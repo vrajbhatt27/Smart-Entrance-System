@@ -1,0 +1,27 @@
+{% extends 'base.html' %}}
+{% block head %}{% endblock head %}
+
+{% block body %}
+<style>
+    .container{
+        /* transform: translate(50%,500%); */
+        width: 100px;
+    height: 100px;
+    position: absolute; 
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    }
+</style>
+<div class="cmain px-10">
+    <div class="container">
+        <a href="accounts/register" class="btn btn-primary btn-block" style="width: 100px;"> Sign Up</a>
+            <br>
+                <br>
+        <a href="accounts/login" class="btn btn-primary btn-block" style="width: 100px;""> Sign In</a>
+    </div>
+</div>
+            
+{% endblock body %}
