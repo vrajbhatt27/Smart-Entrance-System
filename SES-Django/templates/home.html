@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home|Smart Entrance System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1>hii !! {{request.user.first_name}}</h1>    
+<div class="float-right px-3">
+ <a class="btn btn-primary" href="accounts/logout" role="button">Logout</a>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newevent">
+    New Event
+  </button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newmeeting">
+    New Meeting
+  </button>
+              
+            </div>
+<br>
+<br>
+
+  <!-- Event -->
+  <!-- Modal -->
+  <div class="modal fade" id="newevent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Event</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" action="/home">
+                {% csrf_token %}
+                <input type="hidden" name="isevent" value="True">
+                <div class="form-group row">
+                  <label for="inputtitle" class="col-sm-2 col-form-label">Title</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputtitle" name="title" placeholder="Title">
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="eventdate" class="col-sm-2 col-form-label">Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" id="eventdate" name="eventdate">
+                    </div>
+                  </div>
+  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Time</label>
+                   
+                      <div class="col">
+                        <label for="starttime">Start Time</label>
+                        <input type="time" id="starttime" name="starttime">
+                      </div>
+                      <div class="col">
+                        <label for="endttime">End Time</label>
+                        <input type="time" id="endttime" name="endtime" placeholder="End Time">
+                      </div>
+                   </div>
+                   
+                
+                   <div class="form-group row">
+                    <label for="destination" class="col-sm-2 col-form-label">Destination</label>
+                    <div class="col-sm-10">
+                      <textarea name="destination" id="destination" cols="30" rows="3"></textarea>
+                        
+                    </div>
+                  </div>
+                   
+                       <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="Submit" class="btn btn-primary">Add Event</button>
+        </div>                  
+                
+              </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <!-- Meeting -->
+<!-- Modal -->
+  <div class="modal fade" id="newmeeting" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Meeting</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" action="/home">
+                {% csrf_token %}
+                <input type="hidden" name="isevent" value="False">
+                <div class="form-group row">
+                  <label for="inputtitle" class="col-sm-2 col-form-label">Title</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputtitle" name="title" placeholder="Title">
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" id="eventdate" name="eventdate">
+                    </div>
+                  </div>
+  
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Time</label>
+                   
+                      <div class="col">
+                        <label for="starttime">Start Time</label>
+                        <input type="time" id="starttime" name="starttime">
+                      </div>
+                      <div class="col">
+                        <label for="endttime">End Time</label>
+                        <input type="time" id="endttime" name="endtime" placeholder="End Time">
+                      </div>
+                   </div>
+                   
+                
+                   <div class="form-group row">
+                    <label for="destination" class="col-sm-2 col-form-label">Destination</label>
+                    <div class="col-sm-10">
+                      <textarea name="destination" id="destination" cols="30" rows="3"></textarea>
+                        
+                    </div>
+                  </div>
+                <div class="form-group row">
+                    <label for="attendeesemail" class="col-sm-2 col-form-label">Attendees email</label>
+                    <div class="col-sm-10">
+                        <input type="email" multiple class="form-control" id="attendeesemail" name="attendeesemail" placeholder="Enter email sepreted by commas">                 
+                        </div>
+                  </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="Submit" class="btn btn-primary">Add Event</button>
+        </div>                  
+                
+              </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  
+    {% for event in events %}
+  <div class="containter my-3 px-3">
+  <div class="card" style="background-color: lightblue;">
+  <div class="card-body">
+    <h4 class="card-title">{{event.eventdata.event_name}}</h4>
+    <h6 class="card-title">Date: {{event.eventdata.date}}</h6>
+    <h6 class="card-title">Limit: {% if  event.eventdata.event_limit == None %} Not Assigned {% else %} {{event.eventdata.event_limit}}{% endif %}</h6x>
+        {% if event.eventdata.is_event %}
+        <h6 class="card-title">Count: {{event.count}}</h6x>
+    
+        {% endif %}
+    <h6 class="card-title">Type: {% if  event.eventdata.is_event %} Event {% else %} Meeting{% endif %}</h6>
+    <h6 class="card-title">Destination: {% if  event.eventdata.destination == None %}  {% else %} {{event.eventdata.destination}}{% endif %}</h6>
+    
+    {% if  event.eventdata.is_event%}
+    Url : <input type="text" name="copyurl" id={{event.eventdata.eid}} value={{event.url}} >
+      <button onclick="copyText(this)"  data-target={{event.eventdata.eid}} >Copy URL</button>
+    <!-- <input type="button" id="btn_{{event.eventdata.eid}}" value="copy url" onc> -->
+    {% endif %}
+
+
+    <form action="/downloadjson" method="post">
+      {% csrf_token %}
+    <input type="hidden" name="eventid" value={{event.eventdata.eid}}>
+    <input type="submit" value="Download">
+    </form>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+
+</div>
+    {% endfor %}
+    
+  <script>
+  /* return input field to variable text */
+function copyText(elem){
+  var targetElementID = elem.getAttribute("data-target");
+  console.log(targetElementID)
+  var copyText = document.getElementById(targetElementID);
+  copyText.select();
+  document.execCommand("copy");
+   
+}  
+
+</script>
+
+</body>
+</html>
