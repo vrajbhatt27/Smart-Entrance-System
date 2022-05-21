@@ -27,7 +27,7 @@ event, max limit of persons allowed, total number of persons, URL of the form th
 
 In the new event, the details like title, date, time, destination etc. are filled. After adding the event a form is generated and its URL is shared to the guests. The guests fill the form and then a qrcode is sent to their email address which acts as a pass to the event.
 
-![Login](/Images/3.jpg)
+![Login](/Images/3.jpg=250x250)
 
 ![Login](/Images/6.jpg)
 
