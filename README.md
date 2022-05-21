@@ -43,3 +43,7 @@ Now the process of checking whether the person is authorized or not is done by a
 
 The PyFirmata module is used to control the arduino using python. The user can download the database from the home page where all the events/meetings are shown. Also this software can be downloaded from the site in downloads section.
 
+Here is the demo of the module 2:
+
+<video src="/Images/ses.mp4"></video>
+
