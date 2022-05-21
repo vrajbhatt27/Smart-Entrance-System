@@ -23,20 +23,20 @@ The user that has to organize the function has to sign-up here. Once the signup 
 Once the user logins, the home page shows all the events that he has created. It contains the information like date of the
 event, max limit of persons allowed, total number of persons, URL of the form that is shared with the guest, etc.The user can either create a new Event or a new meeting.
 
-![Login](/Images/2.jpg)
+![Home](/Images/2.jpg)
 
 In the new event, the details like title, date, time, destination etc. are filled. After adding the event a form is generated and its URL is shared to the guests. The guests fill the form and then a qrcode is sent to their email address which acts as a pass to the event.
 
-![Login](/Images/3.jpg=250x250)
+![New Event](/Images/3.jpg)
 
-![Login](/Images/6.jpg)
+![Form](/Images/6.jpg)
 
 In the new meeting, the URL that contains the form is not shared. Instead there is an option to add the Attendees email.
 The qrcode is generated and sent to the respective email address which acts as a pass to the meeting.
 
-![Login](/Images/4.jpg)
+![New Meeting](/Images/4.jpg)
 
-![Login](/Images/5.jpg)
+![Email sent with qrcode](/Images/5.jpg)
 
 ### Module-2: SES Software
 
