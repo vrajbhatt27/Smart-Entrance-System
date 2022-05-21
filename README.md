@@ -20,8 +20,7 @@ The user that has to organize the function has to sign-up here. Once the signup 
 
 ![Login](/Images/1.jpg)
 
-Once the user logins, the home page shows all the events that he has created. It contains the information like date of the
-event, max limit of persons allowed, total number of persons, URL of the form that is shared with the guest, etc.The user can either create a new Event or a new meeting.
+Once the user logins, the home page shows all the events that he has created. It contains the information like date of the event, max limit of persons allowed, total number of persons, URL of the form that is shared with the guest, etc.The user can either create a new Event or a new meeting.
 
 ![Home](/Images/2.jpg)
 
@@ -32,7 +31,7 @@ In the new event, the details like title, date, time, destination etc. are fille
 ![Form](/Images/6.jpg)
 
 In the new meeting, the URL that contains the form is not shared. Instead there is an option to add the Attendees email.
-The qrcode is generated and sent to the respective email address which acts as a pass to the meeting.
+The qrcode is generated and sent to the respective email addresses which acts as a pass to the meeting.
 
 ![New Meeting](/Images/4.jpg)
 
@@ -40,9 +39,7 @@ The qrcode is generated and sent to the respective email address which acts as a
 
 ### Module-2: SES Software
 
-Now the process of checking whether the person is authorized or not is done by a software made in python that uses using
-image processing. For this python-OpenCV is used. There guest’s qrcode is scanned at the entrance. The unique id that is
-stored in the qrcode is checked in the database. If the id is found then the door that is opened by arduino else there is a voice that says that “you are not allowed.”
+Now the process of checking whether the person is authorized or not is done by a software made in python that uses image processing. For this python-OpenCV is used. The guest’s qrcode is scanned at the entrance. The unique id that is stored in the qrcode is verified in the database. If the id is found then the door is opened by arduino else there is a voice that says that “you are not allowed.”
 
 The PyFirmata module is used to control the arduino using python. The user can download the database from the home page where all the events/meetings are shown. Also this software can be downloaded from the site in downloads section.
 
