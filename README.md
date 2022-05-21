@@ -45,5 +45,5 @@ The PyFirmata module is used to control the arduino using python. The user can d
 
 Here is the demo of the module 2:
 
-<video src="/Images/ses.mp4"></video>
+![Video](/Images/ses.mp4)
 
