@@ -1,5 +1,12 @@
 # Smart Entrance System
 
+## Table of contents
+
+- [Introduction](https://github.com/vrajbhatt27/Smart-Entrance-System/blob/master/README.md#introduction)
+- [Overview](https://github.com/vrajbhatt27/Smart-Entrance-System/blob/master/README.md#overview)
+- [Working](https://github.com/vrajbhatt27/Smart-Entrance-System/blob/master/README.md#working-of-ses)
+- [Video](https://github.com/vrajbhatt27/Smart-Entrance-System/blob/master/README.md#module-2-ses-software)
+
 ## Introduction
 
 Security is a major issue while arranging any function. Prevention of unauthorized person entering the function is necessary. So for this there is need of security guard at the entrance that checks whether the person is allowed or not. For that there is also a need of pass or a card that shows that the person is invited in the function. Smart Entrance System automates this task and provides better security. Smart Entrance System is made using various technologies like Arduino, Image Processing and Django.
